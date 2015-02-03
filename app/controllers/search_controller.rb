@@ -11,9 +11,19 @@ class SearchController < ApplicationController
     @monster_doc = Nokogiri::HTML(open("http://jobsearch.monster.com/search/ruby_5?where=#{city}__2C-#{state}"))
     @indeed_doc  = Nokogiri::HTML(open("http://www.indeed.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
     if city.empty?
-      @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{state}"))
+      begin
+        @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{state}"))
+      rescue OpenURI::HTTPError
+      else
+        @simply_doc = []
+      end
     else
-      @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{city}%2C+#{state}"))
+      begin
+        @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{city}%2C+#{state}"))
+      rescue OpenURI::HTTPError
+      else
+        @simply_doc = []
+      end
     end
   end
 
@@ -28,17 +38,19 @@ class SearchController < ApplicationController
   end
 
   def scrape_for_simplyhired_jobs
-    rows = @simply_doc.xpath("//div[contains(@id, 'content')]//div[contains(@id, 'search_results')]//div[contains(@class, 'column_center_inner')]//div[contains(@class, 'results')]//ul//li//div[position() = 1]//h2//a")
-    collect_data(rows, "www.simplyhired.com")
+    if @simply_doc.present?
+      rows = @simply_doc.xpath("//div[contains(@id, 'content')]//div[contains(@id, 'search_results')]//div[contains(@class, 'column_center_inner')]//div[contains(@class, 'results')]//ul//li//div[position() = 1]//h2//a")
+      collect_data(rows, "www.simplyhired.com")
+    end
   end
 
 
   private
 
   def scrape_for_data
-    @monster_jobs      = scrape_for_monster_jobs
-    @indeed_jobs       = scrape_for_indeed_jobs
-    @simplyhired_jobs  = scrape_for_simplyhired_jobs
+    @monster_jobs     = scrape_for_monster_jobs
+    @indeed_jobs      = scrape_for_indeed_jobs
+    @simplyhired_jobs = scrape_for_simplyhired_jobs
   end
 
   def collect_data(rows, url = nil)
