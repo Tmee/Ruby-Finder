@@ -2,7 +2,9 @@ class SearchController < ApplicationController
 
   def create
     if params[:city].present? || params[:state].present?
-      get_html_docs(params[:city], params[:state])
+      city  = params[:city].gsub(/\s{1}/, '-')
+      state = params[:state].gsub(/\s{1}/, '-')
+      get_html_docs(city, state)
       scrape_for_data
     end
   end
