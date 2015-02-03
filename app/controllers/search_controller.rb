@@ -3,9 +3,7 @@ class SearchController < ApplicationController
   def create
     if params[:city].present? || params[:state].present?
       get_html_docs(params[:city], params[:state])
-      @monster_jobs = scrape_for_monster_jobs
-      @indeed_jobs  = scrape_for_indeed_jobs
-      @simplyhired_jobs  = scrape_for_simplyhired_jobs
+      scrape_for_data
     end
   end
 
@@ -21,35 +19,34 @@ class SearchController < ApplicationController
 
   def scrape_for_monster_jobs
     rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1]//td[position() = 2]//div[contains(@class, 'jobTitleContainer')]//a")
-    jobs_array = []
-    rows.collect do |row|
-      detail = {}
-      detail[:title] = row.text.gsub(/\s{3}/, '')
-      detail[:link]  = row.attribute('href').value
-      jobs_array << detail
-      end
-    jobs_array
+    collect_data(rows)
   end
 
   def scrape_for_indeed_jobs
     rows = @indeed_doc.xpath("//table//tr//td//table//tr//td[contains(@id ,'resultsCol')]//div[contains(@class, 'row  result')]//h2//a")
-    jobs_array = []
-    rows.collect do |row|
-      detail = {}
-      detail[:title] = row.text.gsub(/\s{3}/, '')
-      detail[:link]  = "www.indeed.com#{row.attribute('href').value}"
-      jobs_array << detail
-      end
-    jobs_array
+    collect_data(rows, "www.indeed.com")
   end
 
   def scrape_for_simplyhired_jobs
     rows = @simply_doc.xpath("//div[contains(@id, 'content')]//div[contains(@id, 'search_results')]//div[contains(@class, 'column_center_inner')]//div[contains(@class, 'results')]//ul//li//div[position() = 1]//h2//a")
+    collect_data(rows, "www.simplyhired.com")
+  end
+
+
+  private
+
+  def scrape_for_data
+    @monster_jobs      = scrape_for_monster_jobs
+    @indeed_jobs       = scrape_for_indeed_jobs
+    @simplyhired_jobs  = scrape_for_simplyhired_jobs
+  end
+
+  def collect_data(rows, url = nil)
     jobs_array = []
     rows.collect do |row|
       detail = {}
       detail[:title] = row.text.gsub(/\s{3}/, '')
-      detail[:link]  = "www.simplyhired.com#{row.attribute('href').value}"
+      detail[:link]  = "#{url}#{row.attribute('href').value}"
       jobs_array << detail
       end
     jobs_array
