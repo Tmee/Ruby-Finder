@@ -12,7 +12,11 @@ class SearchController < ApplicationController
   def get_html_docs(city, state = '')
     @monster_doc = Nokogiri::HTML(open("http://jobsearch.monster.com/search/ruby_5?where=#{city}__2C-#{state}"))
     @indeed_doc  = Nokogiri::HTML(open("http://www.indeed.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
-    @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{city}%2C+#{state}"))
+    if city.empty?
+      @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{state}"))
+    else
+      @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{city}%2C+#{state}"))
+    end
   end
 
   def scrape_for_monster_jobs
