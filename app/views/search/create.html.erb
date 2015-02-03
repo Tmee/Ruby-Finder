@@ -11,11 +11,19 @@
     </div>
   <% end %>
   <hr/>
-
-  <%@jobs.each do |job|%>
-    <div class="panel">
-      <%= job[:title] %>
-      <%= link_to "link", "#{job[:link]}" %>
-    </div>
-  <%end%>
 </div>
+
+<% if @monster_jobs.present? %>
+  <a name="monster"></a>
+  <%= render partial: "search/monster_search" %>
+<% end %>
+
+<% if @indeed_jobs.present? %>
+  <a name="indeed"></a>
+  <%= render partial: "search/indeed_search" %>
+<% end %>
+
+<% if @simplyhired_jobs.present? %>
+  <a name="simplyhired"></a>
+  <%= render partial: "search/simplyhired_search" %>
+<% end %>

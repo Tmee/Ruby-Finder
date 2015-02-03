@@ -1,0 +1,9 @@
+<div class="row" data-equalizer>
+  <h3>Monster.com <small>job listings</small> </h3>
+  <%@monster_jobs.each do |job|%>
+    <div class="large-6 columns panel text-center" data-equalizer-watch>
+      <%= job[:title] %>
+      <%= link_to "link", "#{job[:link]}" %>
+    </div>
+  <%end%>
+</div>
