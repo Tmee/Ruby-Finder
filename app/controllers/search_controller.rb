@@ -1,10 +1,12 @@
 class SearchController < ApplicationController
 
   def create
-    get_html_docs(params[:city], params[:state])
-    @monster_jobs = scrape_for_monster_jobs
-    @indeed_jobs  = scrape_for_indeed_jobs
-    @simplyhired_jobs  = scrape_for_simplyhired_jobs
+    if params[:city].present? || params[:state].present?
+      get_html_docs(params[:city], params[:state])
+      @monster_jobs = scrape_for_monster_jobs
+      @indeed_jobs  = scrape_for_indeed_jobs
+      @simplyhired_jobs  = scrape_for_simplyhired_jobs
+    end
   end
 
   def get_html_docs(city, state)
