@@ -3,7 +3,7 @@
   <%@monster_jobs.each do |job|%>
     <div class="large-6 columns panel text-center" data-equalizer-watch>
       <%= job[:title] %>
-      <%= link_to "link", "#{job[:link]}" %>
+      <%= link_to "link", "http://#{job[:link]}" %>
     </div>
   <%end%>
 </div>
