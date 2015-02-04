@@ -17,5 +17,6 @@
 
 
 .panel-fix {
-  min-height: 50px
+  min-height: 80px;
+  padding-bottom: 0px;
 }
