@@ -17,8 +17,8 @@
 config/environments
 config/locales
 config/initializers
-lib/*
-public/*
-bin/*
-tmp/*
-vender/*
+lib
+public
+bin
+tmp
+vender
