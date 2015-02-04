@@ -34,13 +34,11 @@ class Search < ActiveRecord::Base
   end
 
   def self.collect_data(rows, url = nil)
-    jobs_array = []
     rows.collect do |row|
-      detail = {}
-      detail[:title] = row.text.gsub(/\s{3}/, '')
-      detail[:link]  = "#{url}#{row.attribute('href').value}"
-      jobs_array << detail
-      end
-    jobs_array
+      {
+        :title => row.text.gsub(/\s{3}/, ''),
+        :link  => "#{url}#{row.attribute('href').value}"
+      }
+    end
   end
 end
