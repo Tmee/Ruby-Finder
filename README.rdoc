@@ -1,6 +1,6 @@
 == RubyFinder
 rubyfinder.herokuapp.com
 
-Job finding aid for Ruby Developers
+Job finding aid for Developers looking for Ruby jobs
 
 Type in a location and see what jobs are posted on Monster.com, Indeed.com, and SimplyHired.com
