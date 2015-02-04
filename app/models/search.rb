@@ -43,6 +43,4 @@ class Search < ActiveRecord::Base
       end
     jobs_array
   end
-  private
-
 end
