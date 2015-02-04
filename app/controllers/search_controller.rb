@@ -15,16 +15,12 @@ class SearchController < ApplicationController
     if city.empty?
       begin
         @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{state}"))
-      rescue OpenURI::HTTPError
-      else
-        @simply_doc = []
+        rescue OpenURI::HTTPError
       end
     else
       begin
         @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{city}%2C+#{state}"))
-      rescue OpenURI::HTTPError
-      else
-        @simply_doc = []
+        rescue OpenURI::HTTPError
       end
     end
   end
