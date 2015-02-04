@@ -1,7 +1,7 @@
 <div class="row" data-equalizer>
   <h3>SimplyHired.com <small>job listings</small> </h3>
   <%@simplyhired_jobs.each do |job|%>
-    <div class="large-6 small-6 columns panel text-center" data-equalizer-watch>
+    <div class="large-6 small-6 columns panel text-center" style="height: auto;" data-equalizer-watch>
       <%= job[:title] %>
       <%= link_to "link", "http://#{job[:link]}" %>
     </div>
