@@ -15,8 +15,8 @@ class SearchController < ApplicationController
   end
 
   def format_search
-    @city  = params[:city].gsub(/\s{1}/, '-')
-    @state = params[:state].gsub(/\s{1}/, '-')
+    @city  = params[:city].gsub(/\s/, '-')
+    @state = params[:state].gsub(/\s/, '-')
   end
 
   def scrape_for_jobs
