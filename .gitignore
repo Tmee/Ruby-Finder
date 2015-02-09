@@ -14,9 +14,6 @@
 # Ignore all logfiles and tempfiles.
 log
 tmp
-config/environments
-config/locales
-config/initializers
 lib
 public
 bin
