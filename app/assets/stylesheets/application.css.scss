@@ -16,7 +16,16 @@
  */
 
 
-.panel-fix {
-  min-height: 80px;
+.fix {
+  min-height: 100px;
   padding-bottom: 0px;
+  overflow:scroll;
+}
+
+.job-title {
+  overflow:scroll;
+}
+
+.job-link {
+
 }

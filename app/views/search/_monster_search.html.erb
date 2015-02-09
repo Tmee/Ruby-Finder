@@ -1,9 +1,13 @@
 <div class="row">
-  <h3>Monster.com <small>job listings</small> </h3>
+  <h3>Monster.com <small>job listings</small></h3><br>
   <%@monster_jobs.each do |job|%>
-    <div class="large-6 small-6 columns panel panel-fix text-center">
-      <%= job[:title] %>
-      <%= link_to "link", "#{job[:link]}" %>
+    <div class="large-6 small-6 columns panel fix text-center">
+      <div class="job-title">
+        <%= job[:title] %>
+      </div>
+      <div class="job-link">
+        <%= link_to "link", "#{job[:link]}" %>
+      </div>
     </div>
   <%end%>
 </div>
