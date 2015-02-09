@@ -17,6 +17,7 @@ gem 'foundation-rails', '~> 5.4.5.0'
 gem 'nokogiri'
 gem 'openurl'
 gem 'pry'
+gem 'rails_12factor', group: :production
 
 gem 'better_errors'
 gem 'simplecov', :require => false, :group => :test
