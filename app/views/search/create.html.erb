@@ -13,17 +13,17 @@
   <hr/>
 </div>
 
-<% if @monster_jobs.present? %>
+<% if monster_jobs? %>
   <a name="monster"></a>
   <%= render partial: "search/monster_search" %>
 <% end %>
 
-<% if @indeed_jobs.present? %>
+<% if indeed_jobs? %>
   <a name="indeed"></a>
   <%= render partial: "search/indeed_search" %>
 <% end %>
 
-<% if @simplyhired_jobs.present? %>
+<% if simplyhired_jobs? %>
   <a name="simplyhired"></a>
   <%= render partial: "search/simplyhired_search" %>
 <% end %>
