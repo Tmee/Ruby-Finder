@@ -1,6 +1,7 @@
 <div class="row text-center">
-  <h1>Need A Job?</h1><hr/><br>
+  <h1>Need A Job?</h1><hr/>
    <%= form_tag search_path, :method => 'get' do %>
+   <form>
     <div class="large-8 small-9 columns nav-padding">
       <%= text_field_tag :city, params[:city], placeholder: "City" %>
       <%= text_field_tag :state, params[:state], placeholder: "State" %>
@@ -9,8 +10,8 @@
       <button class="alert button expand" id="click_search" name="search_button" type="submit" value="Search">Search
       </button>
     </div>
+  </form><hr/>
   <% end %>
-  <hr/>
 </div>
 
 <% if monster_jobs? %>
