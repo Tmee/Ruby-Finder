@@ -3,10 +3,6 @@ class Search < ActiveRecord::Base
   def self.get_html_docs(city, state = '')
     @monster_doc = Nokogiri::HTML(open("http://jobsearch.monster.com/search/ruby_5?where=#{city}__2C-#{state}"))
     @indeed_doc  = Nokogiri::HTML(open("http://www.indeed.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
-    set_simplyhired_doc
-  end
-
-  def set_simplyhired_doc
     if city.empty?
       begin
         @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{state}"))
@@ -18,6 +14,10 @@ class Search < ActiveRecord::Base
         rescue OpenURI::HTTPError
       end
     end
+  end
+
+  def self.set_simplyhired_doc
+
   end
 
   def self.monster_jobs
