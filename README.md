@@ -1,4 +1,4 @@
-== RubyFinder
+<h1>RubyFinder</h1>
 
 Job finding aid for Developers looking for Ruby jobs
 
