@@ -16,10 +16,6 @@ class Search < ActiveRecord::Base
     end
   end
 
-  def self.set_simplyhired_doc
-
-  end
-
   def self.monster_jobs
     rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1]//td[position() = 2]//div[contains(@class, 'jobTitleContainer')]//a")
     collect_data(rows)
