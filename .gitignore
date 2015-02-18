@@ -14,5 +14,5 @@
 # Ignore all logfiles and tempfiles.
 lib
 vender
-/log/*.log
+/log/*
 /tmp
