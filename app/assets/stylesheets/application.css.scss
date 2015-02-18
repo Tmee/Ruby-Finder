@@ -23,9 +23,33 @@
 }
 
 .job-title {
-  height: 50px;
+  background-color: white;
+  position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .job-link {
 
+}
+
+.panel-fix {
+  height: 200px;
+  width: 275px;
+  overflow-y:scroll;
+  margin: 0;
+}
+
+.visited {
+  background-color: red;
+}
+
+
+.link {
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
 }

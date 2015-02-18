@@ -1,13 +1,19 @@
 <div class="row">
   <h3>SimplyHired.com <small>job listings</small></h3><br>
   <%@simplyhired_jobs.each do |job|%>
-    <div class="large-6 small-6 columns panel fix text-center">
-      <div class="job-title">
-        <%= job[:title] %>
-      </div>
-      <div class="job-link">
-        <%= link_to "link", "http://#{job[:link]}" %>
-      </div>
+    <div class="large-4 small-6 columns">
+      <div class="panel panel-fix">
+        <div class="row">
+          <div class="large-12 columns job-title">
+            <%= job[:title] %>
+          </div>
+        </div><hr>
+        <div class="row text-center link" target="_blank">
+            <%= link_to "#{image_tag("ruby.png")} Link".html_safe, "http://#{job[:link]}", :target => "_blank"%>
+        </div><br>
+        <div class="row text-center">
+        </div>
+      </div><br>
     </div>
   <%end%>
 </div>
