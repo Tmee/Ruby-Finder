@@ -26946,3 +26946,202 @@ Started GET "/assets/ruby.png" for 127.0.0.1 at 2015-02-17 19:52:53 -0700
 
 
 Started GET "/assets/ruby.png" for 127.0.0.1 at 2015-02-17 19:52:54 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchController#create as HTML
+  Rendered search/create.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_magellan_nav.html.erb (0.3ms)
+Completed 200 OK in 291ms (Views: 280.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation-icons/foundation-icons.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/link_click.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/search.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:37 -0700
+
+
+Started GET "/search?utf8=%E2%9C%93&city=denver&state=CO&search_button=Search" for 127.0.0.1 at 2015-02-17 20:41:47 -0700
+Processing by SearchController#create as HTML
+  Parameters: {"utf8"=>"✓", "city"=>"denver", "state"=>"CO", "search_button"=>"Search"}
+  Rendered search/_monster_search.html.erb (3.8ms)
+  Rendered search/_indeed_search.html.erb (2.6ms)
+  Rendered search/_simplyhired_search.html.erb (2.7ms)
+  Rendered search/create.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_magellan_nav.html.erb (0.0ms)
+Completed 200 OK in 3906ms (Views: 121.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation-icons/foundation-icons.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/ruby.png" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/link_click.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/search.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-17 20:41:51 -0700
+
+
+Started GET "/assets/foundation-icons/foundation-icons.woff" for 127.0.0.1 at 2015-02-17 20:41:54 -0700
