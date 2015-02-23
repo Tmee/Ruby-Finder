@@ -11,4 +11,8 @@ module ApplicationHelper
   def simplyhired_jobs?
     @simplyhired_jobs.present?
   end
+
+  def dice_jobs?
+    @dice_jobs.present?
+  end
 end

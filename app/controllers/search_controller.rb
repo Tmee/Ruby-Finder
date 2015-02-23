@@ -20,8 +20,9 @@ class SearchController < ApplicationController
   end
 
   def scrape_for_jobs
-    @monster_jobs     = Search.monster_jobs
+    @dice_jobs        = Search.dice_jobs
     @indeed_jobs      = Search.indeed_jobs
+    @monster_jobs     = Search.monster_jobs
     @simplyhired_jobs = Search.simplyhired_jobs
   end
 end
