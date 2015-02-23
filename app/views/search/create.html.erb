@@ -1,16 +1,14 @@
 <div class="row text-center">
   <h1>Need A Job?</h1><hr/>
-   <%= form_tag search_path, :method => 'get' do %>
-   <form>
+   <%= form_tag search_path, :method => 'get', :html => {:'data-abide' => true} do %>
     <div class="large-8 small-9 columns nav-padding">
-      <%= text_field_tag :city, params[:city], placeholder: "City" %>
-      <%= text_field_tag :state, params[:state], placeholder: "State" %>
+      <%= text_field_tag :city, params[:city], placeholder: "City", :required => true %>
+      <%= text_field_tag :state, params[:state], placeholder: "State", :required => true %>
     </div><br>
     <div class="large-4 small-3 columns nav-padding">
       <button class="alert button expand" id="click_search" name="search_button" type="submit" value="Search">Search
       </button>
-    </div>
-  </form><hr/>
+    </div><hr/>
   <% end %>
 </div>
 
