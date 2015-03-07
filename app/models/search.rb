@@ -23,15 +23,16 @@ class Search < ActiveRecord::Base
   end
 
   def self.monster_jobs
-    rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1]//td[position() = 2]//div[contains(@class, 'jobTitleContainer')]//a")
+    rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1]//td[position() = 2]")
     collect_data(rows)
   end
 
   def self.collect_data(rows, url = nil)
     rows.collect do |row|
       {
-        :title => row.text.gsub(/\s{3}/, ''),
-        :link  => "#{url}#{row.attribute('href').value}"
+        :title => row.xpath("div[contains(@class, 'jobTitleContainer')]//a").text.gsub(/\s{3}/, ''),
+        :link  => "#{url}#{row.xpath("div[contains(@class, 'jobTitleContainer')]//a").attribute('href').value}",
+        :company_name => row.xpath("div[contains(@class, 'companyContainer')]//a[title]")
       }
     end
   end
