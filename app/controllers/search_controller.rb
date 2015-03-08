@@ -8,6 +8,7 @@ class SearchController < ApplicationController
     end
   end
 
+
   private
 
   def search_present?
@@ -15,14 +16,14 @@ class SearchController < ApplicationController
   end
 
   def format_search
-    @city  = params[:city].gsub(/\s/, '-')
-    @state = params[:state].gsub(/\s/, '-')
+    @city  = params[:city].downcase.gsub(/\s/, '-')
+    @state = params[:state].downcase.gsub(/\s/, '-')
   end
 
   def scrape_for_jobs
-    @dice_jobs        = Search.dice_jobs
-    @indeed_jobs      = Search.indeed_jobs
-    @monster_jobs     = Search.monster_jobs
-    @simplyhired_jobs = Search.simplyhired_jobs
+    @dice_jobs    = Dice.jobs
+    @indeed_jobs  = Indeed.jobs
+    @monster_jobs = Monster.jobs
+    @simplyhired_jobs = SimplyHired.jobs
   end
 end
