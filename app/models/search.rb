@@ -1,26 +1,16 @@
 class Search < ActiveRecord::Base
 
-  def self.get_html_docs(city, state = '')
-    @dice_doc    = Nokogiri::HTML(open("https://www.dice.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
-    @simply_doc  = Nokogiri::HTML(open("http://www.simplyhired.com/search?q=ruby&l=#{city}%2C+#{state}"))
-  end
-
-  def self.dice_jobs
-    rows = @dice_doc.xpath("//div[contains(@id, 'resultSec')]//div[contains(@class, 'serp-result-content')]//a")
-    collect_data(rows)
-  end
-
   def self.simplyhired_jobs
-    rows = @simply_doc.xpath("//div[contains(@id, 'content')]//div[contains(@id, 'search_results')]//div[contains(@class, 'column_center_inner')]//div[contains(@class, 'results')]//ul//li//div[position() = 1]//h2//a")
+    rows = @simply_doc.xpath("//div[contains(@id, 'content')]//div[contains(@id, 'search_results')]//div[contains(@class, 'column_center_inner')]//div[contains(@class, 'results')]//ul//li//div[position() = 1]")
     collect_data(rows, "www.simplyhired.com")
   end
 
-  def self.collect_data(rows, url = nil)
+  def self.collect_data(rows, url)
     rows.collect do |row|
       {
-        :title => row.xpath("div[contains(@class, 'jobTitleContainer')]//a").text.gsub(/\s{3}/, ''),
-        :link  => "#{url}#{row.xpath("div[contains(@class, 'jobTitleContainer')]//a").attribute('href').value}",
-        :company_name => row.xpath("div[contains(@class, 'companyContainer')]//a[title]")
+        :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
+        :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
+        :company_name => row.xpath("div[contains(@class, 'company_location')]//h4").text
       }
     end
   end
