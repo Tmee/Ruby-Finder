@@ -11,18 +11,19 @@ class SimplyHired
 
   def self.collect_data(rows, url)
     rows.collect do |row|
-    if row.xpath("h2//a").empty?
-      {
-        :title => "Not a job, Just a bug... I'm workin' on it",
-        :link => "http://www.addictinggames.com/action-games/free-rider-3-game.jsp",
-        :company_name => "Don't click that link"
-      }
-    else
-      {
-        :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
-        :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
-        :company_name => row.xpath("div[contains(@class, 'company_location')]//h4").text
-      }
+      if row.xpath("h2//a").empty?
+        {
+          :title => "Not a job, Just a bug... I'm workin' on it",
+          :link => "http://www.addictinggames.com/action-games/free-rider-3-game.jsp",
+          :company_name => "Don't click that link"
+        }
+      else
+        {
+          :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
+          :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
+          :company_name => row.xpath("div[contains(@class, 'company_location')]//h4").text
+        }
+      end
     end
   end
 end
