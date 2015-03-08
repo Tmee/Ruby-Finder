@@ -10,9 +10,7 @@ class SimplyHired
   end
 
   def self.collect_data(rows, url)
-    binding.pry
     rows.collect do |row|
-      binding.pry
         {
         :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
         :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
