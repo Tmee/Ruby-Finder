@@ -2,7 +2,6 @@ class Indeed
 
   def self.get_document(city, state)
     @indeed_doc = Nokogiri::HTML(open("http://www.indeed.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
-    puts 'got documents'
   end
 
   def self.jobs
@@ -13,15 +12,12 @@ class Indeed
   def self.collect_data(rows, url)
     rows.collect do |row|
       if row.xpath("h2//a").empty?
-        puts "hit empty array ::: ERROR :::"
-        puts "#{row}"
         {
           :title => "Not a job, Just a bug... I'm workin' on it",
           :link => "http://www.addictinggames.com/action-games/free-rider-3-game.jsp",
           :company_name => "Don't click that link"
         }
       else
-        puts "hit 2"
         {
           :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
           :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
