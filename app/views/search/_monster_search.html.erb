@@ -9,14 +9,12 @@
             <%= job[:title] %>
           </div>
           <div class="company-name text-center">
-            <br><%= job[:company_name] %>
+            <%= job[:company_name] %>
           </div>
         </div><hr>
         <div class="row text-center job-link" target="_blank" job-link>
             <%= link_to "#{image_tag("ruby.png")} Link".html_safe, "#{job[:link]}", :target => "_blank"%>
         </div><br>
-        <div class="row text-center">
-        </div>
       </div><br>
     </div>
   <%end%>
