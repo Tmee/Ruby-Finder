@@ -8,13 +8,8 @@ class SearchController < ApplicationController
     end
   end
 
-  private
 
-  def get_html_docs(city, state)
-    Monster.get_document(city, state)
-    Indeed.get_document(city, state)
-    Dice.get_document(city, state)
-  end
+  private
 
   def search_present?
     params[:city].present? || params[:state].present?
@@ -25,10 +20,17 @@ class SearchController < ApplicationController
     @state = params[:state].gsub(/\s/, '-')
   end
 
+  def get_html_docs(city, state)
+    Dice.get_document(city, state)
+    Indeed.get_document(city, state)
+    Monster.get_document(city, state)
+    SimplyHired.get_document(city, state)
+  end
+
   def scrape_for_jobs
     @dice_jobs    = Dice.jobs
     @indeed_jobs  = Indeed.jobs
     @monster_jobs = Monster.jobs
-    # @simplyhired_jobs = Search.simplyhired_jobs
+    @simplyhired_jobs = SimplyHired.jobs
   end
 end
