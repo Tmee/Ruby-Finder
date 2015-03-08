@@ -11,11 +11,19 @@ class Indeed
 
   def self.collect_data(rows, url)
     rows.collect do |row|
-      {
-        :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
-        :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
-        :company_name => row.xpath("span[contains(@class, 'company')]").text
-      }
+      begin
+        {
+          :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
+          :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
+          :company_name => row.xpath("span[contains(@class, 'company')]").text
+        }
+      rescue
+        {
+          :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
+          :link  => "#{url}#{row.xpath("a").attribute('href').value}",
+          :company_name => row.xpath("span[contains(@class, 'company')]").text
+        }
+      end
     end
   end
 end
