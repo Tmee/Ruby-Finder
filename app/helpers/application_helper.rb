@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def trunc(word)
+    word[0..22]
+  end
+
   def monster_jobs?
     @monster_jobs.present?
   end

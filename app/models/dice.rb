@@ -1,11 +1,11 @@
 class Dice
 
   def self.get_document(city, state)
-    @doc = Nokogiri::HTML(open("https://www.dice.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
+    @dice_doc = Nokogiri::HTML(open("https://www.dice.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
   end
 
   def self.jobs
-    rows = @doc.xpath("//div[contains(@id, 'resultSec')]//div[contains(@class, 'serp-result-content')]")
+    rows = @dice_doc.xpath("//div[contains(@id, 'resultSec')]//div[contains(@class, 'serp-result-content')]")
     collect_data(rows)
   end
 
