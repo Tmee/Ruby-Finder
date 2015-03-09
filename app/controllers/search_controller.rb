@@ -12,7 +12,7 @@ class SearchController < ApplicationController
     @dice_jobs    = Dice.jobs
     @indeed_jobs  = Indeed.jobs
     @monster_jobs = Monster.jobs
-    @simplyhired_jobs = SimplyHired.jobs
+    # @simplyhired_jobs = SimplyHired.jobs
   end
 
 
@@ -31,6 +31,6 @@ class SearchController < ApplicationController
     Dice.get_document(city, state)
     Indeed.get_document(city, state)
     Monster.get_document(city, state)
-    SimplyHired.get_document(city, state)
+    # SimplyHired.get_document(city, state)
   end
 end
