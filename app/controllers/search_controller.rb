@@ -2,17 +2,21 @@ class SearchController < ApplicationController
 
   def create
     if search_present?
+      puts "User's IP address:::   #{request.env["REMOTE_HOST"]}"
+      puts "User's IP address:::   #{request.remote_ip}"
       format_search
       get_html_docs(@city, @state)
+      params.delete :city
+      params.delete :state
       scrape_for_jobs
     end
   end
 
   def scrape_for_jobs
-    @dice_jobs    = Dice.jobs
-    @indeed_jobs  = Indeed.jobs
-    @monster_jobs = Monster.jobs
-    # @simplyhired_jobs = SimplyHired.jobs
+    @dice_jobs    ||= Dice.jobs
+    @indeed_jobs  ||= Indeed.jobs
+    @monster_jobs ||= Monster.jobs
+    @simplyhired_jobs ||= SimplyHired.jobs
   end
 
 
@@ -31,6 +35,6 @@ class SearchController < ApplicationController
     Dice.get_document(city, state)
     Indeed.get_document(city, state)
     Monster.get_document(city, state)
-    # SimplyHired.get_document(city, state)
+    SimplyHired.get_document(city, state)
   end
 end
