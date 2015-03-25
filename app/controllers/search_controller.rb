@@ -2,8 +2,6 @@ class SearchController < ApplicationController
 
   def create
     if search_present?
-      puts "User's IP address:::   #{request.env["REMOTE_HOST"]}"
-      puts "User's IP address:::   #{request.remote_ip}"
       format_search
       get_html_docs(@city, @state)
       params.delete :city

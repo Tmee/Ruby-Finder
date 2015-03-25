@@ -13,9 +13,7 @@ class SimplyHired
 
   def self.collect_data(rows, url)
     rows.collect do |row|
-      if row.xpath("h2//a").empty?
-        binding.pry
-      else
+      if !row.xpath("h2//a").empty?
         {
           :title => row.xpath("h2//a").text.gsub(/\s{3}/, ''),
           :link  => "#{url}#{row.xpath("h2//a").attribute('href').value}",
