@@ -1,4 +1,4 @@
-class Indeed
+  class Indeed
 
   def self.get_document(city, state)
     @indeed_doc = Nokogiri::HTML(open("http://www.indeed.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
