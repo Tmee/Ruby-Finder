@@ -11,10 +11,10 @@ class SearchController < ApplicationController
   end
 
   def scrape_for_jobs
-    @dice_jobs    ||= Dice.jobs
-    @indeed_jobs  ||= Indeed.jobs
-    @monster_jobs ||= Monster.jobs
-    @simplyhired_jobs ||= SimplyHired.jobs
+    @dice_jobs    = Dice.jobs
+    @indeed_jobs  = Indeed.jobs
+    @monster_jobs = Monster.jobs
+    # @simplyhired_jobs ||= SimplyHired.jobs
   end
 
 
