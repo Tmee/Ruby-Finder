@@ -11,7 +11,7 @@ class Dice
 
   def self.collect_data(rows)
     rows.collect do |row|
-        {
+      {
         :title => row.xpath("h3//a").text.gsub(/\s{3}/, ''),
         :link  => "#{row.xpath("h3//a").attribute('href').value}",
         :company_name => row.xpath("ul//li[contains(@class, 'employer')]//a").text
