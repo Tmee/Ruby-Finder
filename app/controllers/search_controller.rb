@@ -13,9 +13,8 @@ class SearchController < ApplicationController
     @dice_jobs    = Dice.jobs
     @indeed_jobs  = Indeed.jobs
     @monster_jobs = Monster.jobs
-    # @simplyhired_jobs ||= SimplyHired.jobs
+    @simplyhired_jobs = SimplyHired.jobs
   end
-
 
   private
 
