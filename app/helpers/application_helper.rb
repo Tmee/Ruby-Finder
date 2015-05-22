@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def truncate(word)
+    word.size > 20 ? "#{word[0..15]}..." : word
+  end
+
   def monster_jobs?
     @monster_jobs.present?
   end

@@ -4,8 +4,7 @@ class SearchController < ApplicationController
     if search_present?
       format_search
       get_html_docs(@city, @state)
-      params.delete :city
-      params.delete :state
+      reset_params
       scrape_for_jobs
     end
   end
@@ -20,13 +19,18 @@ class SearchController < ApplicationController
 
   private
 
+  def reset_params
+    params.delete :city
+    params.delete :state
+  end
+
   def search_present?
     params[:city].present? || params[:state].present?
   end
 
   def format_search
-    @city  = params[:city].downcase.gsub(/\s/, '-')
-    @state = params[:state].downcase.gsub(/\s/, '-')
+    @city  = params[:city].capitalize.gsub(/\s/, '-')
+    @state = params[:state].upcase.gsub(/\s/, '-')
   end
 
   def get_html_docs(city, state)
