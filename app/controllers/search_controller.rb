@@ -1,7 +1,6 @@
 class SearchController < ApplicationController
 
   def create
-
   end
 
   def results

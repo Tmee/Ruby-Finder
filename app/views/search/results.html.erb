@@ -32,8 +32,19 @@
     <% end %>
   </div>
 
-  <div class="panel large-4 columns notes">
-    <h2>Notes</h2>
-    <%= text_area_tag 'notes'%>
+  <div class="large-4 columns panel notes" id="note">
+    <% if current_user.present? %>
+      <h2><%= current_user.name %>'s Notes</h2>
+      <%= form_for current_user do |f| %>
+        <%= f.text_area :note %>
+        <%= f.submit 'Update NotePad', class: "note-button button" %>
+      <% end %>
+    <% else %>
+      <h2>Notes </h2>
+      <div class="text-center">
+        <h4>You'll need to log in to use the NotePad</h4><hr/>
+        <h3><a href="/auth/twitter" class="button">Login with Twitter</a></h3>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -16,6 +16,13 @@
   background-color: #656565;
 }
 
+.note-button {
+  background-color: #656565;
+  border-radius: 0px 0px 81px 81px;
+  -moz-border-radius: 0px 0px 81px 81px;
+  -webkit-border-radius: 0px 0px 81px 81px;
+}
+
 .search-input {
   margin-top: 8px;
 }
@@ -53,14 +60,22 @@
 
 .notes{
   right:9%;
-  height:500px;
+  height:551px;
   color: #262626;
-  position: fixed;
+  position: absolute;
   background-color: #05C2D1;
+  textarea {
+    height: 464px;
+  }
+  a {
+    color: #FFFFFF;
+    background-color: #656565;
+  }
 }
 
-textarea#notes {
-  height: 380px;
+.note-fixed{
+  position: fixed;
+  top: 40px;
 }
 
 .job-panel {
