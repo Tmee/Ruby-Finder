@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :users
 
   get 'search', to: 'search#results'
-  get '/code' => redirect("https://github.com/Tmee/job_finder")
+  get '/code' => redirect("https://github.com/Tmee/ruby-finder")
 end
