@@ -6,8 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RubyMonster
+module RubyFinder
   class Application < Rails::Application
-    config.assets.paths << Rails.root.join("app", "assets", "stylesheets", "foundation-icons")
+    config.assets.paths << Rails.root.join("app", "assets", "stylesheets")
   end
 end
