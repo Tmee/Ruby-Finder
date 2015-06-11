@@ -14,7 +14,7 @@ class Monster
       {
         :title => row.xpath("td[position() = 2]//div//a[position() = 1]").text.gsub(/\s{3}/, ''),
         :link  => row.xpath("td[position() = 2]//div//a[position() = 1]").attribute('href').value,
-        :company_name => row.xpath("td[position() = 2]//div//a[position() = 3]").text.gsub(/\s{3}/, ''),
+        :company_name => row.xpath("td[position() = 2]//div[contains(@class, 'companyContainer')]//a[position() = 2]").text,
         :location => row.xpath("td[position() = 3]//div//a").text
       }
     end
