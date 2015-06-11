@@ -11,9 +11,28 @@
   padding-bottom: 0px;
 }
 
+.user-name {
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+.logout {
+  padding-left: 5px;
+  padding-right: 34px;
+  background-color: #656565;
+}
+
 .search {
   border-radius: 10px;
   background-color: #656565;
+}
+
+.note-login {
+  border-radius: 48px;
 }
 
 .note-button {
@@ -23,6 +42,10 @@
   -webkit-border-radius: 0px 0px 81px 81px;
 }
 
+.note-update {
+  background-color: #656565;
+  border-radius: 0px 0px 47px 47px;
+}
 .search-input {
   margin-top: 8px;
 }
@@ -75,7 +98,7 @@
 
 .note-fixed{
   position: fixed;
-  top: 40px;
+  top: 47px;
 }
 
 .job-panel {
@@ -88,4 +111,38 @@
 
 .location {
   right: 10px;
+}
+
+.effect8
+{
+  background-color: #656565;
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+          box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect8:before, .effect8:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:10px;
+  bottom:10px;
+  left:0;
+  right:0;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.effect8:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+     -moz-transform:skew(8deg) rotate(3deg);
+      -ms-transform:skew(8deg) rotate(3deg);
+       -o-transform:skew(8deg) rotate(3deg);
+          transform:skew(8deg) rotate(3deg);
 }
