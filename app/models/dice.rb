@@ -5,7 +5,7 @@ class Dice
   end
 
   def self.jobs
-    rows = @dice_doc.xpath("//div[contains(@id, 'resultSec')]//div[contains(@class, 'serp-result-content')]")
+    rows = @dice_doc.xpath("//div[contains(@id, 'resultSec')]//div[contains(@id , 'search-results-control')]//div[contains(@id, 'serp')]//div[contains(@class, 'serp-result-content')]")
     collect_data(rows)
   end
 
@@ -14,7 +14,8 @@ class Dice
       {
         :title => row.xpath("h3//a").text.gsub(/\s{3}/, ''),
         :link  => "#{row.xpath("h3//a").attribute('href').value}",
-        :company_name => row.xpath("ul//li[contains(@class, 'employer')]//a").text
+        :company_name => row.xpath("ul//li[contains(@class, 'employer')]//a").text,
+        :location => row.xpath("ul//li[contains(@class, 'location')]").text
       }
     end
   end

@@ -5,16 +5,17 @@ class Monster
   end
 
   def self.jobs
-    rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1]//td[position() = 2]")
+    rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1][@class]")
     collect_data(rows)
   end
 
   def self.collect_data(rows)
     rows.collect do |row|
       {
-        :title => row.xpath("div//a[position() = 1]").text.gsub(/\s{3}/, ''),
-        :link  => row.xpath("div//a[position() = 1]").attribute('href').value,
-        :company_name => row.xpath("div//a[position() = 3]").text.gsub(/\s{3}/, '')
+        :title => row.xpath("td[position() = 2]//div//a[position() = 1]").text.gsub(/\s{3}/, ''),
+        :link  => row.xpath("td[position() = 2]//div//a[position() = 1]").attribute('href').value,
+        :company_name => row.xpath("td[position() = 2]//div//a[position() = 3]").text.gsub(/\s{3}/, ''),
+        :location => row.xpath("td[position() = 3]//div//a").text
       }
     end
   end
