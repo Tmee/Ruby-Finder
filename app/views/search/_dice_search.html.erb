@@ -1,21 +1,17 @@
-<div class="row">
-  <h3>Dice.com <small>job listings</small></h3><br>
+<div class="row text-left">
   <a name="dice"></a>
+  <h3>Dice.com <small>job listings</small></h3><br>
   <%@dice_jobs.each do |job|%>
-    <div class="large-4 small-6 columns">
-      <div class="panel panel-fix">
-        <div class="row">
-          <div class="large-12 columns job-title">
-            <%= job[:title] %>
-          </div>
-          <div class="company-name text-center">
-            <%= job[:company_name] %>
-          </div>
-        </div><hr>
-        <div class="row text-center job-link" target="_blank" job-link>
-            <%= link_to "#{image_tag("ruby.png")} Link".html_safe, "#{job[:link]}", :target => "_blank"%>
-        </div><br>
-      </div><br>
-    </div>
+    <%= link_to "#{job[:link]}", :target => "_blank" do %>
+      <div class="panel job-panel">
+        <div class="large-12 columns job-title">
+          <%= job[:title] %>
+        </div>
+        <div class="company-name">
+          <%= job[:company_name] %>
+        </div>
+      </div>
+    <% end %>
   <%end%>
 </div>
+
