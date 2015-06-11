@@ -1,0 +1,39 @@
+<div class="row text-center">
+  <h1>Need A Job?</h1><hr/>
+   <%= form_tag search_path, :method => 'get', :html => {:'data-abide' => true} do %>
+    <div class="large-4 columns search-input">
+      <%= text_field_tag :city, params[:city], placeholder: "City", :required => true %>
+    </div>
+    <div class="large-4 columns search-input">
+      <%= text_field_tag :state, params[:state], placeholder: "State", :required => true %>
+    </div>
+    <div class="large-4 columns">
+      <button class="search button expand" id="click_search" name="search_button" type="submit" value="Search">Search</button>
+  <% end %>
+</div><hr/>
+
+
+<div class="row">
+  <div class="large-7 columns">
+    <% if monster_jobs? %>
+      <%= render partial: "search/monster_search" %>
+    <% end %>
+
+    <% if indeed_jobs? %>
+      <%= render partial: "search/indeed_search" %>
+    <% end %>
+
+    <% if simplyhired_jobs? %>
+      <%= render partial: "search/simplyhired_search" %>
+    <% end %>
+
+    <% if dice_jobs? %>
+      <%= render partial: "search/dice_search" %>
+    <% end %>
+  </div>
+
+  <div class="panel large-4 columns notes">
+    <h2>Notes</h2>
+    <%= text_area_tag 'notes'%>
+  </div>
+</div>

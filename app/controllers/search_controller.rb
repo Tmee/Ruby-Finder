@@ -1,6 +1,10 @@
 class SearchController < ApplicationController
 
   def create
+
+  end
+
+  def results
     if search_present?
       format_search
       get_html_docs(@city, @state)
