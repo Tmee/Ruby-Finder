@@ -7,11 +7,15 @@
         <div class="large-12 columns job-title">
           <%= job[:title] %>
         </div>
-        <div class="company-name">
-          <%= job[:company_name] %>
+        <div class="row company-name">
+          <div class="large-6 columns">
+            <%= job[:company_name] %>
+          </div>
+          <div class="large-6 columns text-right location">
+            <%= job[:location] %>
+          </div>
         </div>
       </div>
     <% end %>
   <%end%>
 </div>
-
