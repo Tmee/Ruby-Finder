@@ -9,8 +9,8 @@ $(document).ready(function() {
     }
   });
 
-  note.keypress(function(e) {
-    if (e.keyCode === 9) {
+  note.keydown(function(e) {
+    if (e.which === 9) {
       e.preventDefault();
     }
   });
