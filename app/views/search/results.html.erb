@@ -12,7 +12,6 @@
   <% end %>
 </div><hr/>
 
-
 <div class="row">
   <div class="large-7 columns">
     <% if monster_jobs? %>
@@ -31,31 +30,5 @@
       <%= render partial: "search/dice_search" %>
     <% end %>
   </div>
-
-  <div class="large-4 columns panel notes" id="note">
-    <% if current_user.present? %>
-      <div class="row">
-        <div class="large-10 columns text-left user-name">
-          <h3><%= current_user.name %>'s Notes</h3>
-        </div>
-        <div class="large-2 columns text-right">
-          <button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="logout tiny round button dropdown" style="padding-left: 5px;padding-right: 34px;"></button><br>
-          <ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
-            <li><%= link_to 'Logout', logout_path, method: 'delete', style: "color:white;" %></li>
-          </ul>
-        </div>
-      </div>
-      <%= form_for current_user do |f| %>
-        <%= f.text_area :note %>
-        <%= f.submit 'Update NotePad', class: "note-update button" %>
-      <% end %>
-    <% else %>
-      <h2>Notes </h2>
-      <div class="text-center">
-        <h4>Search all you want....</h4>
-        <h4>You'll need to log in to use the NotePad though</h4><hr/>
-        <h3><a href="/auth/twitter" class="note-login button">Login with Twitter</a></h3>
-      </div>
-    <% end %>
-  </div>
+  <%= render partial: "search/note_pad" %>
 </div>
