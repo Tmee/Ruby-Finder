@@ -21,6 +21,8 @@ gem 'rails_12factor', group: :production
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem "figaro"
+gem 'vcr', :group => :test
+gem 'faraday', :group => :test
 
 
 gem 'better_errors'
