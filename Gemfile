@@ -21,8 +21,11 @@ gem 'rails_12factor', group: :production
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem "figaro"
-gem 'vcr', :group => :test
 
-
-gem 'better_errors'
-gem 'simplecov', :require => false, :group => :test
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'httpclient'
+  gem 'better_errors'
+  gem 'simplecov', :require => false
+end

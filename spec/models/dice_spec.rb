@@ -2,29 +2,20 @@ require 'rails_helper'
 require 'vcr_setup'
 
 RSpec.describe Dice, :type => :model do
-  VCR.use_cassette 'fixtures/vcr_cassettes' do
-    let(:response) do
-      Net::HTTP.get_response(URI('https://www.dice.com/jobs?q=ruby&l=Denver%2C+CO'))
-    end
-  end
 
-  describe "Response" do
-    describe "the response has job data" do
-      it "has entire job div" do
+  describe "gets correct response" do
+    it "has job elements" do
+      VCR.use_cassette "dice" do
+        response = HTTPClient.get('https://www.dice.com/jobs?l=Denver,%20CO&q=ruby')
         expect(response.body).to include('serp-result-content')
       end
+    end
 
-      it "has the correct number of jobs" do
-        expect(response.body).to_not be_true
+    it "has the correct number of job elements" do
+      VCR.use_cassette "dice" do
+        response = HTTPClient.get('https://www.dice.com/jobs?l=Denver,%20CO&q=ruby')
+        expect(response.body.split('serp-result-content').count).to equal(61)
       end
     end
   end
-
-  describe "XPaths" do
-    it "gets the job title" do
-      true
-    end
-  end
-
-
 end
