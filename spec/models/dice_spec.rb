@@ -31,7 +31,7 @@ RSpec.describe Dice, :type => :model do
       skip
     end
 
-    it "collects the comapny name" do
+    it "collects the company name" do
       skip
     end
 
