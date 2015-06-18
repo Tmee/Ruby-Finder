@@ -1,21 +1,38 @@
 require 'rails_helper'
-require 'vcr_setup'
+
 
 RSpec.describe Dice, :type => :model do
+  let(:response) do
+    file = File.read(File.expand_path("../../xml_cassettes/dice.xml", __FILE__))
+    Nokogiri::XML(file)
+  end
 
-  describe "gets correct response" do
-    it "has job elements" do
-      VCR.use_cassette "dice" do
-        response = HTTPClient.get('https://www.dice.com/jobs?l=Denver,%20CO&q=ruby')
-        expect(response.body).to include('serp-result-content')
-      end
+  describe "Document" do
+    it "gets the correct document" do
+      true
+    end
+  end
+
+  describe "XPath" do
+
+    it "finds the correct number of rows" do
+      expect(response.xpath("//a")).to_not be_empty
     end
 
-    it "has the correct number of job elements" do
-      VCR.use_cassette "dice" do
-        response = HTTPClient.get('https://www.dice.com/jobs?l=Denver,%20CO&q=ruby')
-        expect(response.body.split('serp-result-content').count).to equal(61)
-      end
+    it "collects the title" do
+      skip
+    end
+
+    it "collects the link" do
+      skip
+    end
+
+    it "collects the comapny name" do
+      skip
+    end
+
+    it "collects the location" do
+      skip
     end
   end
 end
