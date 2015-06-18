@@ -1,8 +1,12 @@
 require 'rails_helper'
 
-
 RSpec.describe Dice, :type => :model do
   let(:response) do
+    if file.ctime < (Date.today - 1)
+      File.open((File.expand_path("../../xml_cassettes/dice.xml", __FILE__)).rewrite do
+        Nokogiri::XML(open("https://www.dice.com/jobs?q=ruby&l=Denver%2C+CO"))
+      end
+    end
     file = File.read(File.expand_path("../../xml_cassettes/dice.xml", __FILE__))
     Nokogiri::XML(file)
   end
