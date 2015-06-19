@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Dice, :type => :model do
   let(:response) do
-    file = File.read(File.expand_path("../../xml_cassettes/dice.xml", __FILE__))
-    if file.ctime < (Date.today - 1)
-      File.open((File.expand_path("../../xml_cassettes/dice.xml", __FILE__)).rewrite do
-        Nokogiri::XML(open("https://www.dice.com/jobs?q=ruby&l=Denver%2C+CO"))
-      end
+    file = File.open(File.expand_path("../../xml_cassettes/dice.xml", __FILE__), "w")
+    if file.ctime > (Date.today)
+      File.open( File.expand_path("../../xml_cassettes/dice.xml", __FILE__),"w" ) {}
+      file << Nokogiri::XML(open("https://www.dice.com/jobs?q=ruby&l=Denver%2C+CO"))
+      file.close
     end
     Nokogiri::XML(file)
   end
