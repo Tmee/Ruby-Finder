@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Dice, :type => :model do
   let(:url) {"https://www.dice.com/jobs?q=ruby&l=Denver%2C+CO"}
-  let(:document) {File.open(File.expand_path("../../xml_cassettes/dice.xml", __FILE__), "w+")}
+  let(:document) {File.open(File.expand_path("../../xml_cassettes/dice.xml", __FILE__), "w")}
   let(:response) do
     if true
       File.open(document) {}
       document << Nokogiri::HTML(open(url))
+      document.close
+      Nokogiri(File.open(document))
+    else
+      Nokogiri(File.open(document))
     end
-    Nokogiri::XML(document)
   end
 
   describe "XML Document" do
@@ -25,7 +28,7 @@ RSpec.describe Dice, :type => :model do
   describe "XPath" do
 
     it "finds the correct number of rows" do
-      expect(response.at("a")).to be true
+      expect(response.xpath("//a")).to_not be_empty
     end
 
     it "collects the title" do
