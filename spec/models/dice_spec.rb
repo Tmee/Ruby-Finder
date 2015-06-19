@@ -2,13 +2,20 @@ require 'rails_helper'
 
 RSpec.describe Dice, :type => :model do
   let(:response) do
-    file = File.open(File.expand_path("../../xml_cassettes/dice.xml", __FILE__), "w")
-    if file.ctime > (Date.today)
-      File.open( File.expand_path("../../xml_cassettes/dice.xml", __FILE__),"w" ) {}
+    file = File.open(File.expand_path("../../xml_cassettes/dice.xml", __FILE__), "w+")
+    if DateTime.parse(file.ctime.to_s).to_date < Date.today
+      File.open( File.expand_path("../../xml_cassettes/dice.xml", __FILE__),"w+" ) {}
       file << Nokogiri::XML(open("https://www.dice.com/jobs?q=ruby&l=Denver%2C+CO"))
       file.close
     end
     Nokogiri::XML(file)
+  end
+
+  describe "XML Document" do
+    it "is not outdated" do
+      file = File.open(File.expand_path("../../xml_cassettes/dice.xml", __FILE__))
+      expect(DateTime.parse(file.ctime.to_s).to_date == Date.today).to equal(true)
+    end
   end
 
   describe "Document" do
