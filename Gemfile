@@ -23,9 +23,6 @@ gem 'omniauth-twitter'
 gem "figaro"
 
 group :test do
-  gem 'vcr'
-  gem 'webmock'
-  gem 'httpclient'
   gem 'better_errors'
   gem 'simplecov', :require => false
 end
