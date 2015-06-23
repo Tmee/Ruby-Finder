@@ -1,0 +1,13 @@
+
+<div class="row">
+  <% @notes.each do |note| %>
+    <div class="large-6 colums">
+      <%= form_for note do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.text_field :title %>
+        <%= f.text_area :body %>
+        <%= f.submit 'Update NotePad', class: "note-update button" %>
+      <% end %><br/>
+    </div>
+  <% end %>
+</div>

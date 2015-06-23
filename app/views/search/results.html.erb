@@ -1,5 +1,8 @@
 <div class="row text-center">
   <hr/>
+  <form>
+
+  </form>
    <%= form_tag search_path, :method => 'get', :html => {:'data-abide' => true} do %>
     <div class="large-4 columns search-input">
       <%= text_field_tag :city, params[:city], placeholder: "City", :required => true %>
@@ -30,5 +33,7 @@
       <%= render partial: "search/dice_search" %>
     <% end %>
   </div>
-  <%= render partial: "search/note_pad" %>
+  <div class="large-4 columns panel note-pad" id='notePad'>
+    <%= render partial: "search/note_pad" %>
+  </div>
 </div>
