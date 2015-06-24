@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   resources :notes, only: [:create, :show, :destroy, :update]
 
-  get 'set_note_pad', to: 'notes#set_note_pad'
   get 'search', to: 'search#results'
   get '/code' => redirect("https://github.com/Tmee/ruby-finder")
 end
