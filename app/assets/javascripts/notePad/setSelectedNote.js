@@ -1,8 +1,11 @@
 $(document).ready(function() {
-  $("li.note-title").click(function() {
-    $('textarea#selected_note').attr('data-note-id', $(this).data('note-id'))
-    setSelectedNote($(this).data());
-  });
+  setInterval(function(){
+    $("li.note-title").click(function() {
+      console.log("hit ::::::::::::::::::::::");
+      $('textarea#selected_note').attr('data-note-id', $(this).data('note-id'))
+      setSelectedNote($(this).data());
+    });
+  }, 1000);
 
   var setSelectedNote = function(data) {
     var id = data.noteId;

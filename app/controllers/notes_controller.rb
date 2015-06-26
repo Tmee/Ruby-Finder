@@ -9,6 +9,10 @@ class NotesController < ApplicationController
     end
   end
 
+  def index
+    render json: current_user.notes
+  end
+
   def destroy
     if Note.find(params[:id]).destroy
       render json: nil, status: :ok

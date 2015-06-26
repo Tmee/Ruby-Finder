@@ -15,13 +15,7 @@
     </div>
   </div>
   <div class="note-titles">
-    <ul class="inline-list" id="title-list" style="display: inline-flex">
-      <% current_user.notes.each do |note|%>
-        <li class="note-title" style="color:white;margin-left: 10px;" data-note-id=<%= note.id %>>
-          <%= note.title %>
-        </li>
-      <% end %>
-    </ul>
+    <ul class="inline-list" id="title-list" style="display: inline-flex"></ul>
   </div>
   <% if no_notes? %>
     <%= form_for Note.new do |f| %>
