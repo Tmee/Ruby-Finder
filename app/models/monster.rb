@@ -5,7 +5,7 @@ class Monster
   end
 
   def self.jobs
-    rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[position() > 1][@class]")
+    rows = @monster_doc.xpath("//div[contains(@class, 'leftContainer')]//div[contains(@id, 'primaryResults')]//table//tr[contains(@class, 'odd') or contains(@class, 'even')]")
     collect_data(rows)
   end
 
