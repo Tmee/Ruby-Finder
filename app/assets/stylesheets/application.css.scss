@@ -4,7 +4,6 @@
  *= require foundation_and_overrides
  */
 
-
 .fix {
   overflow:scroll;
   min-height: 100px;
@@ -47,8 +46,11 @@
 }
 
 .note-update {
+  width: 200px;
+  bottom: 17px;
+  border-radius: 50%;
+  margin-bottom: 15px;
   background-color: #656565;
-  border-radius: 0px 0px 47px 47px;
 }
 .search-input {
   margin-top: 8px;
@@ -85,14 +87,14 @@
   }
 }
 
-.notes{
+.note-pad{
   right:9%;
-  height:573px;
+  height: 625px;
   color: #262626;
   position: absolute;
   background-color: #05C2D1;
   textarea {
-    height: 464px;
+    height: 425px;
   }
   a {
     color: #FFFFFF;
@@ -101,8 +103,9 @@
 }
 
 .note-fixed{
+  top: 45px;
   position: fixed;
-  top: 47px;
+  padding-top: 10px;
 }
 
 .job-panel {
@@ -129,4 +132,33 @@
   -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
           box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.note-titles {
+  width: 383px;
+  min-height: 35px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-left: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 11px;
+  border-bottom-width: 0px;
+}
+
+.note-title {
+  height: 35px;
+  min-width:100px;
+  margin-left: 10px;
+  overflow: scroll;
+  border-radius: 50%;
+  background: #656565;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 6px;
+  transition: background-color 0.3s ease;
+}
+
+li.note-title:hover {
+  background-color: #007095;
 }

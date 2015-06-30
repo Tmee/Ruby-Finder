@@ -1,6 +1,6 @@
 <div class="row text-center">
   <hr/>
-   <%= form_tag search_path, :method => 'get', :html => {:'data-abide' => true} do %>
+     <%= form_tag search_path, :method => 'get', :html => {:'data-abide' => true} do %>
     <div class="large-4 columns search-input">
       <%= text_field_tag :city, params[:city], placeholder: "City", :required => true %>
     </div>
@@ -15,7 +15,7 @@
 <div class="row">
   <div class="large-7 columns">
     <% if monster_jobs? %>
-      <%= render partial: "search/monster_search" %>
+      <%= render partial: "search/monster" %>
     <% end %>
 
     <% if indeed_jobs? %>
@@ -30,5 +30,7 @@
       <%= render partial: "search/dice_search" %>
     <% end %>
   </div>
-  <%= render partial: "search/note_pad" %>
+  <div class="large-4 columns panel note-pad" id='notePad'>
+    <%= render partial: "search/note_pad" %>
+  </div>
 </div>

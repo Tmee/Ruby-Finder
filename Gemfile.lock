@@ -27,7 +27,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.7)
     arel (5.0.1.20140414130214)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -48,8 +47,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
-    crack (0.4.2)
-      safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -61,7 +58,6 @@ GEM
       sass (>= 3.2.0)
     hashie (3.4.0)
     hike (1.2.3)
-    httpclient (2.6.0.1)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -126,6 +122,8 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -142,7 +140,6 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -180,10 +177,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
-    vcr (2.9.3)
-    webmock (1.20.4)
-      addressable (>= 2.3.6)
-      crack (>= 0.3.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -196,7 +189,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   figaro
   foundation-rails (~> 5.4.5.0)
-  httpclient
   jbuilder (~> 2.0)
   jquery-rails
   nokogiri
@@ -207,11 +199,10 @@ DEPENDENCIES
   pry
   rails (= 4.1.7)
   rails_12factor
+  responders
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simplecov
   spring
   uglifier (>= 1.3.0)
-  vcr
-  webmock

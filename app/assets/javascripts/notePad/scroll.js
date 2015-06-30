@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var note = $("#note");
+  var note = $("#notePad");
 
   $(document).scroll(function() {
     if ($(document).scrollTop() >= 260) {

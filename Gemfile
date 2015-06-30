@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.7'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -21,11 +20,9 @@ gem 'rails_12factor', group: :production
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem "figaro"
+gem "responders"
 
-group :test do
-  gem 'vcr'
-  gem 'webmock'
-  gem 'httpclient'
+group :test, :development do
   gem 'better_errors'
   gem 'simplecov', :require => false
 end

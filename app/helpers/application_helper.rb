@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def truncate(word)
-    word.size > 20 ? "#{word[0..15]}..." : word
+  def first_name(name)
+    name.scan(/\w+/).first
   end
 
   def monster_jobs?
