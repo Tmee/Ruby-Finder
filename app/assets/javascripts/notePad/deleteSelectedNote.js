@@ -1,20 +1,24 @@
 $(document).ready(function() {
+  clickDelete();
+});
+
+var clickDelete = function() {
   $('a#delete-note').click(function(e) {
     e.preventDefault();
     deleteNote();
   });
+};
 
-  var deleteNote = function() {
-    var id = $('textarea#selected_note').data('noteId');
-    var url = "/notes/" + id;
-    $.ajax({
-      url: url,
-      method: "DELETE"
-    }).done(function(data) {
-      $('li.note-title[data-note-id=' + id + ']').remove();
-      $('textarea#selected_note').removeAttr('data-note-id')
-      $('input#selected_note_title').val('Note Deleted');
-      $('textarea#selected_note').val('');
-    });
-  };
-});
+var deleteNote = function() {
+  var id = parseInt($('textarea#selected_note').attr('data-note-id'));
+  console.log(id)
+  var url = "/notes/" + id;
+  $.ajax({
+    url: url,
+    method: "DELETE"
+  }).done(function() {
+    $('li.note-title[data-note-id=' + id + ']').remove();
+    $('input#selected_note_title').val('Deleted Note');
+    $('textarea#selected_note').val('');
+  });
+};
