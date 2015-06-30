@@ -10,7 +10,7 @@ class NotesController < ApplicationController
   end
 
   def index
-    render json: current_user.notes
+    render json: current_user.notes.order('updated_at DESC')
   end
 
   def destroy
