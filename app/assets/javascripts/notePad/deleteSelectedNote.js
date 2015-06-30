@@ -11,7 +11,6 @@ var clickDelete = function() {
 
 var deleteNote = function() {
   var id = parseInt($('textarea#selected_note').attr('data-note-id'));
-  console.log(id)
   var url = "/notes/" + id;
   $.ajax({
     url: url,

@@ -1,11 +1,10 @@
 $(document).ready(function() {
   $('button#update-selected-note').click(function(e) {
     e.preventDefault();
-    var noteBody = $('')
     updateSelectedNote();
   });
 
-  var updateSelectedNote = function (data) {
+  var updateSelectedNote = function () {
     var id = parseInt($('textarea#selected_note').attr('data-note-id'));
     var url = "/notes/" + id;
     var updatedText = {note:
