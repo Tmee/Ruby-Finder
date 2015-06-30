@@ -6,7 +6,7 @@ $(document).ready(function() {
   });
 
   var updateSelectedNote = function (data) {
-    var id = $('textarea#selected_note').data('noteId');
+    var id = parseInt($('textarea#selected_note').attr('data-note-id'));
     var url = "/notes/" + id;
     var updatedText = {note:
                         {
