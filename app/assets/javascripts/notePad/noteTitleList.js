@@ -4,7 +4,7 @@ $(document).ready(function() {
     url: url,
     method: "GET"
   }).done(function(data) {
-    $.each( data, function(key, value){
+    $.each( data, function(key){
       $('ul#title-list').append(
         "<li class='note-title' style='color:white;margin-left: 10px;' data-note-id=" + data[key].id + ">" + data[key].title + "</li>");
     })
