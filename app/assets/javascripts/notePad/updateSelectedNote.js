@@ -32,14 +32,12 @@ var updateNote = function(id) {
   });
 };
 
-
 function ShowDialog() {
   ShowDialogBox('WHOOPS!',"You don't have any notes yet. Click the dropdown button to add your first note");
 }
 
 function ShowDialogBox(title, content) {
   $("#lblMessage").html(content);
-
   $("#dialog").dialog({
     resizable: false,
     title: title,

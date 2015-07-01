@@ -19,8 +19,6 @@ $(document).ready( function() {
     var newText = $('textarea#selected_note').val();
     if (newText !== oldText) {
       updateNote(id);
-    } else {
-      console.log("they match, keep moving");
     }
   };
 

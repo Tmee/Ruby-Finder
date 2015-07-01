@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $("form").on( 'keydown', function(e) {
     var keyCode = e.keyCode || e.which;
 
