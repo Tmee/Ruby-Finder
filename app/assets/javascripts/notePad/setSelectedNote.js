@@ -1,7 +1,7 @@
 var clickedTitle = function() {
-  $("li.note-title").unbind('click');
-  $("li.note-title").click(function() {
-    $('textarea#selected_note').attr('data-note-id', $(this).data('note-id'))
+  $(".note-titles").on("click", ".note-title", function() {
+    $(".note-titles").off("click");
+    $('textarea#selected_note').attr('data-note-id', $(this).data('note-id'));
     setSelectedNote($(this).data());
   });
 };
