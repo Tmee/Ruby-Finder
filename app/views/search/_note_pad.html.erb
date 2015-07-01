@@ -17,10 +17,17 @@
   <div class="note-titles">
     <ul class="inline-list" id="title-list" style="display: inline-flex"></ul>
   </div>
-    <form>
+  <form>
     <input type="text" class="note-title" id="selected_note_title"></input>
     <textarea id="selected_note"><% if no_notes? %>Add a Note to start editing<% end %></textarea>
     <button class="note-update" id="update-selected-note">Update Note</button>
+    <div id="dialog" title="Alert message" style="display: none">
+    <div class="ui-dialog-content ui-widget-content">
+      <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0"></span>
+        <label id="lblMessage"></label>
+      </p>
+    </div>
   </form>
 <% else %>
   <h2>Notes </h2>
