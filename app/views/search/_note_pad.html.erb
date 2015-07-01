@@ -17,19 +17,11 @@
   <div class="note-titles">
     <ul class="inline-list" id="title-list" style="display: inline-flex"></ul>
   </div>
-  <% if no_notes? %>
-    <%= form_for Note.new do |f| %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.text_area :body %>
-      <%= f.submit 'Update NotePad', class: "note-update button" %>
-    <% end %>
-  <% else %>
     <form>
-      <input type="text" class="note-title" id="selected_note_title"></input>
-      <textarea id="selected_note"></textarea>
-      <button class="note-update" id="update-selected-note">Update Note</button>
-    </form>
-  <% end %>
+    <input type="text" class="note-title" id="selected_note_title"></input>
+    <textarea id="selected_note"><% if no_notes? %>Add a Note to start editing<% end %></textarea>
+    <button class="note-update" id="update-selected-note">Update Note</button>
+  </form>
 <% else %>
   <h2>Notes </h2>
   <div class="text-center">
