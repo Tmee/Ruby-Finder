@@ -21,6 +21,7 @@
     <input type="text" class="note-title" id="selected_note_title"></input>
     <textarea id="selected_note"><% if no_notes? %>Add a Note to start editing<% end %></textarea>
     <button class="note-update" id="update-selected-note">Update Note</button>
+  </form>
     <div id="dialog" title="Alert message" style="display: none">
     <div class="ui-dialog-content ui-widget-content">
       <p>
@@ -28,7 +29,6 @@
         <label id="lblMessage"></label>
       </p>
     </div>
-  </form>
 <% else %>
   <h2>Notes </h2>
   <div class="text-center">

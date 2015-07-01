@@ -50,5 +50,3 @@ function ShowDialogBox(title, content) {
     hide: { effect: 'scale', duration: 400 }
   });
 };
-
-
