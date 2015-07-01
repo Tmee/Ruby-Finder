@@ -10,7 +10,7 @@ $(document).ready(function() {
       updateNote(id);
       $('textarea#selected_note').empty
     } else {
-      alert("Looks like you don't have any notes,  Click the dropdown button to create your first note!")
+      ShowDialog();
     }
   };
 });
@@ -31,3 +31,24 @@ var updateNote = function(id) {
     $('li.note-title[data-note-id=' + id +']').replaceWith("<li class='note-title' style='color:white;margin-left: 10px;' data-note-id=" + id + ">" + data.title + "</li>");
   });
 };
+
+
+function ShowDialog() {
+  ShowDialogBox('WHOOPS!',"You don't have any notes yet. Click the dropdown button to add your first note");
+}
+
+function ShowDialogBox(title, content) {
+  $("#lblMessage").html(content);
+
+  $("#dialog").dialog({
+    resizable: false,
+    title: title,
+    modal: true,
+    width: '400px',
+    height: 'auto',
+    bgiframe: false,
+    hide: { effect: 'scale', duration: 400 }
+  });
+};
+
+
