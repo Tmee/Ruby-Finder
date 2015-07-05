@@ -11,7 +11,6 @@ gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'rspec-rails'
 gem 'capybara'
 gem 'foundation-rails', '~> 5.4.5.0'
 gem 'nokogiri'
@@ -26,4 +25,7 @@ gem "responders"
 group :test, :development do
   gem 'better_errors'
   gem 'simplecov', :require => false
+  gem 'rspec-rails'
+  gem 'jasmine'
+  gem 'jasmine-jquery-rails'
 end
