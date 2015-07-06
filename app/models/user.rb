@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
 private
 
   def self.find_or_create_user(auth_data)
-    User.where(provider: auth_data['twitter'], uid: auth_data['uid']).first_or_create
+    User.where(provider: auth_data['provider'], uid: auth_data['uid']).first_or_create
   end
 end

@@ -1,4 +1,20 @@
-require 'webmock/rspec'
+require 'rubygems'
+
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+ENV["RAILS_ENV"] ||= 'test'
+require File.expand_path("../../config/environment", __FILE__)
+
+
+OmniAuth.config.test_mode = true
+  omniauth_hash = { 'provider' => 'twitter',
+                    'uid' => '12345',
+                    'info' => {
+                        'name' => 'Tim',
+                        'email' => 'Tim@example.com',
+                        'nickname' => 'MeeTim'
+                    }
+                  }
+OmniAuth.config.add_mock(:twitter, omniauth_hash)
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
