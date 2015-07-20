@@ -20,7 +20,11 @@ class NotesController < ApplicationController
   end
 
   def show
-    render json: Note.find(params[:id])
+    if current_user.notes.include?(Note.find(params[:id]))
+      render json: Note.find(params[:id])
+    else
+      render json: nil
+    end
   end
 
   def update
