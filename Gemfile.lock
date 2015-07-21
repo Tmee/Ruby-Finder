@@ -33,6 +33,7 @@ GEM
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     builder (3.2.2)
+    cancancan (1.9.2)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -188,6 +189,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  cancancan
   capybara
   coffee-rails (~> 4.0.0)
   figaro

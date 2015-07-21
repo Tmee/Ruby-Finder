@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  load_and_authorize_resource
 
   def create
     note = Note.new(note_params)
@@ -20,23 +21,13 @@ class NotesController < ApplicationController
   end
 
   def show
-    if current_user.notes.include?(Note.find(params[:id]))
-      render json: Note.find(params[:id])
-    else
-      render json: nil
-    end
+    render json: Note.find(params[:id])
   end
 
   def update
-    begin
-      if current_user.id == Note.find(params[:id]).user_id
-        note = Note.find(params[:id])
-        note.update_attributes(note_params)
-        render json: note, status: :ok
-      else
-        render json: nil, status: :error
-      end
-    end rescue render json: nil, status: :error
+    note = Note.find(params[:id])
+    note.update_attributes(note_params)
+    render json: note, status: :ok
   end
 
   private
