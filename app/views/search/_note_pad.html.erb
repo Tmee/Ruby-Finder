@@ -1,21 +1,25 @@
 <% if current_user.present? %>
-  <div class="top-note-pad row">
-    <div class="large-10 columns text-left user-name">
-      <h3><%= first_name(current_user.name) %>'s Notes</h3>
-    </div>
-    <div class="large-2 columns">
-      <button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="logout tiny round button dropdown" style="padding-left: 5px;padding-right: 34px;"></button><br>
-    </div>
-    <div class="large-3 columns text-right">
-      <ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
-        <li><a style='color:white;' id="new-note">New Note</a></li>
-        <li><a style='color:white;' id='delete-note'>Delete Note</a></li>
-        <li><%= link_to 'Logout', logout_path, method: 'delete', style: "color:white;" %></li>
-      </ul>
+  <div class="top-note-pad">
+    <div class="row">
+      <div class="large-10 columns text-left user-name">
+        <h3><%= first_name(current_user.name) %>'s Notes</h3>
+      </div>
+      <div class="large-2 columns">
+        <button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="logout tiny round button dropdown" style="padding-left: 5px;padding-right: 34px;"></button><br>
+      </div>
+      <div class="large-3 columns text-right">
+        <ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
+          <li><a style='color:white;' id="new-note">New Note</a></li>
+          <li><a style='color:white;' id='delete-note'>Delete Note</a></li>
+          <li><%= link_to 'Logout', logout_path, method: 'delete', style: "color:white;" %></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="note-titles">
-    <ul class="inline-list" id="title-list" style="display: inline-flex"></ul>
+  <div class="row">
+    <div class="note-titles">
+      <ul class="inline-list" id="title-list" style="display: inline-flex"></ul>
+    </div>
   </div>
   <form>
     <input type="text" class="note-title" id="selected_note_title"></input>

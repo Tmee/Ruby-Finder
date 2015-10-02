@@ -14,7 +14,7 @@ class SimplyHired
       {
         :title => row.at("h2//a").text.gsub(/\s{3}/, ''),
         :link  => "#{url}#{row.at("h2//a").attribute('href').value}",
-        :company_name => row.at("h4").text,
+        :company_name => row.at("div//a").text,
         :location => row.at("[@class = location]").text.strip.split.join
       }
     end
