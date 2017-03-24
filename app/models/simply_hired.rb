@@ -5,17 +5,17 @@ class SimplyHired
   end
 
   def self.jobs
-    rows = @simply_hired_doc.xpath("//div[contains(@id, 'content')]//div[contains(@id, 'search_results')]//div[contains(@id, 'column_center')]//div[contains(@class, 'column_center_inner')]//div[contains(@class, 'results')]//ul//li//div[contains(@class, 'job')]")
+    rows = @simply_hired_doc.xpath("//div[contains(@class, 'jobs')]//div[contains(@class, 'card')]")
     collect_data(rows, "www.simplyhired.com")
   end
 
   def self.collect_data(rows, url)
     rows.collect do |row|
       {
-        :title => row.at("h2//a").text.gsub(/\s{3}/, ''),
-        :link  => "#{url}#{row.at("h2//a").attribute('href').value}",
-        :company_name => row.at("div//a").text,
-        :location => row.at("[@class = location]").text.strip.split.join
+        :title => row.xpath("a").text,
+        :link  => "#{url}#{row.xpath("a/@href").text}",
+        :company_name => row.xpath("h3//span[contains(@class, 'jobposting-company')]").first.text,
+        :location => row.xpath("h3//span[contains(@class, 'jobposting-location')]").first.text
       }
     end
   end

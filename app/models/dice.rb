@@ -1,6 +1,8 @@
 class Dice
 
   def self.get_document(city, state)
+    binding.pry
+
     @dice_doc = Nokogiri::HTML(open("https://www.dice.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
   end
 
@@ -12,7 +14,7 @@ class Dice
   def self.collect_data(rows)
     rows.collect do |row|
       {
-        :title => row.xpath("h3//a").text.gsub(/\s{3}/, ''),
+        :title => row.xpath("ul//h3").text.strip,
         :link  => "#{row.xpath("h3//a").attribute('href').value}",
         :company_name => row.xpath("ul//li[contains(@class, 'employer')]//a").text,
         :location => row.xpath("ul//li[contains(@class, 'location')]").text

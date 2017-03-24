@@ -10,9 +10,9 @@ class SearchController < ApplicationController
   end
 
   def scrape_for_jobs
-    @dice_jobs    = Dice.jobs
-    @indeed_jobs  = Indeed.jobs
+    # @dice_jobs    = Dice.jobs
     @monster_jobs = Monster.jobs
+    @indeed_jobs  = Indeed.jobs
     @simplyhired_jobs = SimplyHired.jobs
   end
 
@@ -33,9 +33,9 @@ class SearchController < ApplicationController
   end
 
   def get_html_docs(city, state)
-    Dice.get_document(city, state)
-    Indeed.get_document(city, state)
+    # Dice.get_document(city, state)
     Monster.get_document(city, state)
+    Indeed.get_document(city, state)
     SimplyHired.get_document(city, state)
   end
 end
