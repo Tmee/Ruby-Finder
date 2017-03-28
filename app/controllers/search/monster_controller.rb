@@ -1,8 +1,6 @@
 class MonsterController < ApplicationController
 
   def results
-    binding.pry
-    "in monster"
     if search_present?
       format_search
       get_html_docs(@city, @state)

@@ -10,7 +10,7 @@ class Monster
   end
 
   def self.collect_data(rows)
-    rows.collect do |row|
+    out = rows.collect do |row|
       {
         :title => row.xpath("article//div[contains(@class, 'jobTitle')]").text.strip,
         :link  => row.xpath("article//div[contains(@class, 'jobTitle')]//a/@href").text,
@@ -18,5 +18,6 @@ class Monster
         :location => row.xpath("article//div//div[contains(@class, 'job-specs-location')]").text.strip
       }
     end
+    out.delete_if { |k| k[:title].empty? }
   end
 end

@@ -23,6 +23,7 @@ gem 'omniauth-twitter'
 gem "figaro"
 gem "responders"
 gem 'newrelic_rpm'
+gem 'react-rails'
 
 group :test, :development do
   gem 'better_errors'

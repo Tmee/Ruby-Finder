@@ -5,6 +5,12 @@
  *= require jquery-ui
  */
 
+ #job-circle {
+  width: 270px;
+  height: 100px;
+  overflow: hidden;
+}
+
 .fix {
   overflow:scroll;
   min-height: 100px;
@@ -12,7 +18,7 @@
 }
 
 .logo {
-  width: 532px;
+  width: 140px;
 }
 
 .user-name {
@@ -58,6 +64,7 @@
 }
 
 .job-title {
+  font-size: 90%;
   z-index: 9;
   color: #FFFFFF;
   padding-top: 5px;
@@ -124,6 +131,7 @@
 
 .location {
   right: 10px;
+  font-size: 70%;
 }
 
 .note-update

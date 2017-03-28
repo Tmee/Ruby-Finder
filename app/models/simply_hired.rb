@@ -12,7 +12,7 @@ class SimplyHired
   def self.collect_data(rows, url)
     rows.collect do |row|
       {
-        :title => row.xpath("a").text,
+        :title => row.xpath("a").text.strip,
         :link  => "#{url}#{row.xpath("a/@href").text}",
         :company_name => row.xpath("h3//span[contains(@class, 'jobposting-company')]").first.text,
         :location => row.xpath("h3//span[contains(@class, 'jobposting-location')]").first.text

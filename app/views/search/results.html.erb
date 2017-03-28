@@ -13,24 +13,19 @@
 </div><hr/>
 
 <div class="row">
-  <div class="large-7 columns">
-    <% if monster_jobs? %>
-      <%= render partial: "search/monster" %>
-    <% end %>
+  <% if monster_jobs? %>
+    <%= render partial: "search/job_results", locals: {job_list: @monster_jobs, site_name: Monster} %>
+  <% end %>
 
-    <% if indeed_jobs? %>
-      <%= render partial: "search/indeed_search" %>
-    <% end %>
+  <% if indeed_jobs? %>
+    <%= render partial: "search/job_results", locals: {job_list: @indeed_jobs, site_name: Indeed} %>
+  <% end %>
 
-    <% if simplyhired_jobs? %>
-      <%= render partial: "search/simplyhired_search" %>
-    <% end %>
+  <% if simplyhired_jobs? %>
+    <%= render partial: "search/simplyhired_search" %>
+  <% end %>
 
-    <% if dice_jobs? %>
-      <%= render partial: "search/dice_search" %>
-    <% end %>
-  </div>
-  <div class="large-4 columns panel note-pad" id='notePad'>
-    <%= render partial: "search/note_pad" %>
-  </div>
+  <% if dice_jobs? %>
+    <%= render partial: "search/job_results", locals: {job_list: @dice_jobs, site_name: Dice} %>
+  <% end %>
 </div>

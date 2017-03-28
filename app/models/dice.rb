@@ -1,8 +1,6 @@
 class Dice
 
   def self.get_document(city, state)
-    binding.pry
-
     @dice_doc = Nokogiri::HTML(open("https://www.dice.com/jobs?q=ruby&l=#{city}%2C+#{state}"))
   end
 
