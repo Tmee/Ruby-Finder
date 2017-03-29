@@ -5,7 +5,7 @@
   <%@simplyhired_jobs.each do |job|%>
     <li>
       <%= link_to "http://#{(job[:link])}", :target => "_blank" do %>
-        <div class="large-4 columns" id="job-circle">
+        <div id="job-circle">
           <div class="panel job-panel text-center">
             <div class="large-12 columns job-title">
               <%= truncate(job[:title], length: 25) %>

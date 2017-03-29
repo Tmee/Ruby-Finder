@@ -1273,7 +1273,7 @@ select {
 
   /* line 172, /Users/Tim_Mee/.rvm/gems/ruby-2.1.2/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/components/_grid.scss */
   .large-4 {
-    width: 33.33333%;
+    /*width: 33.33333%;*/
   }
 
   /* line 172, /Users/Tim_Mee/.rvm/gems/ruby-2.1.2/gems/foundation-rails-5.4.5.0/vendor/assets/stylesheets/foundation/components/_grid.scss */

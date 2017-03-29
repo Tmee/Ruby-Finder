@@ -1,15 +1,15 @@
-$(document).ready(function() {
-  var url = "/notes";
-  $.ajax({
-    url: url,
-    method: "GET"
-  }).done(function(data) {
-    $.each( data, function(key){
-      $('ul#title-list').append(
-        "<li class='note-title' style='color:white;margin-left: 10px;' data-note-id=" + data[key].id + ">" + data[key].title + "</li>");
-      $('textarea#selected_note').attr('data-note-id', data[0].id)
-      $('input#selected_note_title').val(data[0].title);
-      $('textarea#selected_note').val(data[0].body);
-    })
-  });
-});
+// $(document).ready(function() {
+//   var url = "/notes";
+//   $.ajax({
+//     url: url,
+//     method: "GET"
+//   }).done(function(data) {
+//     $.each( data, function(key){
+//       $('ul#title-list').append(
+//         "<li class='note-title' style='color:white;margin-left: 10px;' data-note-id=" + data[key].id + ">" + data[key].title + "</li>");
+//       $('textarea#selected_note').attr('data-note-id', data[0].id)
+//       $('input#selected_note_title').val(data[0].title);
+//       $('textarea#selected_note').val(data[0].body);
+//     })
+//   });
+// });
