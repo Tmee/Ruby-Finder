@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get "/auth/twitter", as: "login"
   delete '/logout', to: "sessions#destroy"
   resources :users, only: [:create]
-  resources :notes
 
   get 'search', to: 'search#results'
   get '/code' => redirect("https://github.com/Tmee/ruby-finder")
